@@ -1,0 +1,33 @@
+img {
+    width: 100%;
+}
+
+
+@media (min-width: 992px) {
+    .card_width {
+        width: 25%;
+    }
+}
+
+@media (min-width: 768px) {
+    .card_width {
+        width: 25%;
+    }
+}
+
+
+.details_card {
+    margin-top: -25px;
+    z-index: 9999;
+    position: relative;
+    background: white;
+    padding: 15px;
+    border: solid 1px #0000ff45;
+    border-radius: 20px;
+}
+
+.back_btn {
+    position: absolute;
+    z-index: 9999;
+    color: white;
+}

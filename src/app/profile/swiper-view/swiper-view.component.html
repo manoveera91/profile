@@ -1,0 +1,54 @@
+<div class="row p-4 bg-card">
+  <div class="col-md-4"></div>
+  <div class="col-md-4">
+    <div class="d-flex align-items-center daily-rec mb-4">
+      <button mat-icon-button routerLink="/">
+        <mat-icon style="font-size: 18px;">arrow_back</mat-icon>
+      </button>
+      <span>Daily Recommendations</span>
+    </div>
+    <div class="swiper" #swiperContainer>
+      <div class="swiper-wrapper">
+        <div class="swiper-slide" *ngFor="let item of profileData">
+          <mat-card class="w-100 h-full rounded-0">
+            <img [routerLink]="item.id" mat-card-image [src]="item.pic" alt="photo" />
+            <mat-card-content>
+              <div class="d-flex align-items-center gap-2 verified_label">
+                <div class="d-flex justify-content-between align-items-center verified">
+                  <mat-icon class="material-icons-outlined" style="font-size: 16px;">verified_user</mat-icon>
+                  <span class="pb-2">Verified</span>
+                </div>
+                <div class="d-flex justify-content-between align-items-center premium">
+                  <mat-icon class="material-icons-outlined" style="font-size: 16px;">workspace_premium</mat-icon>
+                  <span class="pb-2">Premium NRI</span>
+                </div>
+              </div>
+              <div class="h5">{{item.name}}</div>
+              <div class="font-family mb-2">{{item.age}} Yrs, {{item.height}}, {{item.language}},
+                {{item.caste}}, {{item.education}},
+                {{item.job}}, {{item.location}}, {{item.state}} </div>
+              <div class="d-flex justify-content-between align-items-center gap-2">
+                <div class="d-flex justify-content-between align-items-center gap-1" style="cursor: pointer;"
+                  (click)="openSnackBar('Profile shortlisteded', '')">
+                  <mat-icon>star_outline</mat-icon>
+                  <span>Shortlist</span>
+                </div>
+                <div class="d-flex justify-content-between align-items-center gap-2">
+                  <div><b>Like her?</b></div>
+                  <button mat-raised-button class="rounded-5 text-muted"
+                    (click)="openSnackBar('Not Interested on profile', 'close')">
+                    <mat-icon>close</mat-icon>
+                  </button>
+                  <button mat-raised-button class="rounded-5 btn-clr"
+                    (click)="openSnackBar('Interested on profile', 'done')">
+                    <mat-icon>done</mat-icon>
+                  </button>
+                </div>
+              </div>
+            </mat-card-content>
+          </mat-card>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,22 @@
+.bg-color {
+    background-color: #33a2db;
+}
+
+.new {
+ font-size: 12px;
+ text-align: center;
+}
+
+.btn-clr {
+    background-color: #ff9800;
+    color: white;
+}
+
+.pending_info {
+    font-size: medium;
+    font-weight: 500;
+}
+
+::ng-deep .mat-card-image {
+    margin: 0px;
+}

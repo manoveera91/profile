@@ -1,0 +1,24 @@
+<div class="text-align-center">
+    <div class="d-flex justify-content-center">
+        <div class="card_width">
+            <div>
+                <div class="back_btn">
+                    <button mat-icon-button routerLink="/">
+                        <mat-icon style="font-size: 20px;">arrow_back</mat-icon>
+                    </button>
+                    <span>{{profileData.id}}</span>
+                </div>
+                <img [src]="profileData.pic" alt="photo" />
+            </div>
+            <div class="details_card">
+                <mat-card-content>
+                    <div class="h5">{{profileData.name}}</div>
+                    <div class="font-family mb-2">{{profileData.age}} Yrs, {{profileData.height}},
+                        {{profileData.language}},
+                        {{profileData.caste}}, {{profileData.education}},
+                        {{profileData.job}}, {{profileData.location}}, {{profileData.state}}. </div>
+                </mat-card-content>
+            </div>
+        </div>
+    </div>
+</div>

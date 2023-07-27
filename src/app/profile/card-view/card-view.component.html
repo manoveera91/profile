@@ -1,0 +1,35 @@
+<div class="row p-4 bg-card bg-color">
+    <div class="col-md-12"></div>
+    <div class="col-md-12">
+        <div class="d-flex pb-3 align-items-center justify-content-between text-light">
+            <span>My Matches</span>
+            <span>
+                <button mat-icon-button routerLink="recommendations"><mat-icon>more_vert</mat-icon></button>
+            </span>
+        </div>
+        <div class="d-flex pb-3 align-items-center gap-2 text-light">
+            <span class="pending_info">{{profileData.length}} Profiles pending with me</span>
+            <span class="border rounded-4 p-1 px-2  new">5 NEW</span>
+        </div>
+        <div class="swiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide" *ngFor="let item of profileData">
+                    <mat-card class="w-100 h-full rounded-4">
+                        <img [routerLink]="item.id" mat-card-image [src]="item.pic" alt="photo" />
+                        <mat-card-content>
+                            <div class="h6">{{item.name}}</div>
+                            <div class="font-family">{{item.age}} Yrs, {{item.height}}, {{item.language}},
+                                {{item.caste}}</div>
+                            <div class="font-family">{{item.education}}, {{item.job}}, {{item.location}}</div>
+                            <div class="font-family mb-2">{{item.state}}.</div>
+                            <div class="d-flex gap-2">
+                                <button mat-raised-button class="rounded-5 btn-clr" [routerLink]="item.id">Yes</button>
+                                <button mat-raised-button class="rounded-5 text-muted" (click)="slideNext()">No</button>
+                            </div>
+                        </mat-card-content>
+                    </mat-card>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
